@@ -16,9 +16,10 @@ chmod +x /etc/init.d/welcome
 update-rc.d /etc/init.d/welcome defaults 80 30
 update-rc.d /etc/init.d/edustack defaults 80 30
 
-touch ~/firstboot
+touch /home/iflab/firstboot
+chown iflab:iflab /home/iflab/firstboot
 
-cat <<EOF >> ~/.bashrc
+cat <<EOF >> /home/iflab/.bashrc
 if [ -f "/home/iflab/firstboot" ]; then
 mv /home/iflab/firstboot /home/iflab/.firstboot_done
 fi
@@ -32,7 +33,7 @@ iface eth0 inet dhcp
 
 EOF
 
-su iflab
+
 usermod -L iflab
 chage -d 0 iflab
 usermod -U iflab
