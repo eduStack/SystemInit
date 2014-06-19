@@ -13,8 +13,8 @@ chmod +x /etc/init.d/eduStack
 chmod +x /etc/init.d/welcome
 
 
-update-rc.d /etc/init.d/welcome defaults 80 30
-update-rc.d /etc/init.d/edustack defaults 80 30
+update-rc.d welcome defaults 80 30
+update-rc.d eduStack defaults 80 30
 
 touch /home/iflab/firstboot
 chown iflab:iflab /home/iflab/firstboot
